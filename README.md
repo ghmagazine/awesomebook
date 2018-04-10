@@ -1,7 +1,5 @@
 # awesomebook
 
-# chainerbook
-
 ## 『前処理大全』のサンプルコード
 
 本橋智光　著、株式会社ホクソエム　監修
