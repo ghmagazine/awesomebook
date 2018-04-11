@@ -8,7 +8,7 @@ library(mice)
 # mice関数を利用するためにデータ型を変換（mice関数内でモデル構築をするため）
 production_missn_tb$type <- as.factor(production_missn_tb$type)
 
-# fault_flgが文字列の状態なのでブール型に変換（「第9章 カテゴリ型」で解説）
+# fault_flgが文字列の状態なのでブール型に変換（「第9章 カテゴリ型で解説）
 production_missn_tb$fault_flg <- production_missn_tb$fault_flg == 'TRUE'
 
 # mice関数にpmmを指定して、多重代入法を実施
