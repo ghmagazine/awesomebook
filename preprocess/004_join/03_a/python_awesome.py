@@ -15,4 +15,4 @@ result = reserve_tb \
 # customerごとに2つ前のtotal_priceをbefore_priceとして保存
 # shift関数は、periodsの引数の数だけデータ行を下にずらす関数
 result['before_price'] = \
-  result['total_price'].groupby('customer_id').shift(periods=2)
+  pd.Series(result['total_price'].groupby('customer_id').shift(periods=2))
