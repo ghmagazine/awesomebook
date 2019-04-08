@@ -11,7 +11,7 @@ JOIN work.hotel_tb hotel
   ON rsv.hotel_id = hotel.hotel_id
 
 -- ホテルテーブルからビジネスホテルのデータのみ抽出
-WHERE hotel.is_business is True
+AND hotel.is_business is True
 
 	-- 予約テーブルからビジネスホテルのデータのみ抽出
   AND rsv.people_num = 1
