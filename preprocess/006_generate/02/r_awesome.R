@@ -2,13 +2,14 @@ source('preprocess/load_data/data_loader.R')
 load_production()
 
 # 下記から本書掲載
-library(tidyverse)
-
 # ubBalance用のライブラリ
 library(unbalanced)
+library(tidyverse)
 
-# 不均衡の多いデータ数が927,少ないデータ数が73のときのpercOverの設定値の計算式
-percOver <- round(927 / 73) * 100 - 100
+# percOverの設定値の計算
+t_num <- production_tb %>% filter(fault_flg==T) %>% summarize(t_num=n())
+f_num <- production_tb %>% filter(fault_flg==F) %>% summarize(f_num=n())
+percOver <- round(f_num / t_num) * 100 - 100
 
 # 不均衡を正す対象をfactor型に変換(logical型ではないことに注意)
 # （第9章「9-1 カテゴリ型」の例題で解説）
